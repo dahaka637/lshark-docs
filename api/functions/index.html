@@ -1,0 +1,1138 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Public API and hooks for LSHARK (Garry's Mod / DarkRP)">
+      
+      
+      
+        <link rel="canonical" href="https://dahaka637.github.io/lshark-docs/api/functions/">
+      
+      
+        <link rel="prev" href="../overview/">
+      
+      
+        <link rel="next" href="../hooks/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/lshark-logo.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Functions - LSHARK API Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#public-api-server-functions-lsharkapi" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="LSHARK API Documentation" class="md-header__button md-logo" aria-label="LSHARK API Documentation" data-md-component="logo">
+      
+  <img src="../../assets/lshark-logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            LSHARK API Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Functions
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="cyan"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="cyan"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../overview/" class="md-tabs__link">
+          
+  
+  
+  API
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="LSHARK API Documentation" class="md-nav__button md-logo" aria-label="LSHARK API Documentation" data-md-component="logo">
+      
+  <img src="../../assets/lshark-logo.png" alt="logo">
+
+    </a>
+    LSHARK API Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    API
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Functions
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Functions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#availability-scope" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Availability &amp; Scope
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-model-returned-by-the-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Model Returned by the API
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#function-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Function Reference
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Function Reference">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lsharkapigetallcontractscode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LSHARK.API.GetAllContractsCode()
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lsharkapigetallcontractdata" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LSHARK.API.GetAllContractData()
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lsharkapigetcontractscodesteamid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LSHARK.API.GetContractsCode(steamid)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lsharkapigetcontractdatacode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LSHARK.API.GetContractData(code)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lsharkapigetbalancesteamid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LSHARK.API.GetBalance(steamid)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lsharkapihasactivedebtsteamid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LSHARK.API.HasActiveDebt(steamid)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usage-examples-server-side" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Usage Examples (Server-Side)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Usage Examples (Server-Side)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-1-block-an-action-if-player-has-debt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 1 — Block an action if player has debt
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-2-fetch-all-contracts-for-a-player-and-print-remaining-balance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 2 — Fetch all contracts for a player and print remaining balance
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-3-admin-scan-heavy-list-all-contract-codes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 3 — Admin scan (heavy): list all contract codes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#best-practices-for-integrators" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Best Practices for Integrators
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hooks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hooks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contract-model/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contract Model
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lifecycle/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lifecycle
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#availability-scope" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Availability &amp; Scope
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-model-returned-by-the-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Model Returned by the API
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#function-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Function Reference
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Function Reference">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lsharkapigetallcontractscode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LSHARK.API.GetAllContractsCode()
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lsharkapigetallcontractdata" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LSHARK.API.GetAllContractData()
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lsharkapigetcontractscodesteamid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LSHARK.API.GetContractsCode(steamid)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lsharkapigetcontractdatacode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LSHARK.API.GetContractData(code)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lsharkapigetbalancesteamid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LSHARK.API.GetBalance(steamid)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lsharkapihasactivedebtsteamid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LSHARK.API.HasActiveDebt(steamid)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usage-examples-server-side" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Usage Examples (Server-Side)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Usage Examples (Server-Side)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-1-block-an-action-if-player-has-debt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 1 — Block an action if player has debt
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-2-fetch-all-contracts-for-a-player-and-print-remaining-balance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 2 — Fetch all contracts for a player and print remaining balance
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-3-admin-scan-heavy-list-all-contract-codes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 3 — Admin scan (heavy): list all contract codes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#best-practices-for-integrators" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Best Practices for Integrators
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="public-api-server-functions-lsharkapi">Public API — Server Functions (<code>LSHARK.API</code>)</h1>
+<p>This section documents the <strong>public, server-side, read-only API</strong> exposed by LSHARK for third-party addon integration. The goal is to allow external systems (inventories, restrictions, analytics, admin tools) to <strong>observe contract state</strong> without direct access to internal SQL, net messages, or business logic.</p>
+<h2 id="availability-scope">Availability &amp; Scope</h2>
+<ul>
+<li><strong>Server-side only</strong> (the module does not load on client).</li>
+<li><strong>Read-only access</strong> to contract data (no create/update/delete functions).</li>
+<li>All contract payloads returned to addons are <strong>sanitized copies</strong>, so integrations don’t depend on internal DB schemas or row formats.</li>
+</ul>
+<hr />
+<h2 id="data-model-returned-by-the-api">Data Model Returned by the API</h2>
+<p>All functions that return contract data use the same <strong>sanitized contract structure</strong>.</p>
+<pre><code class="language-txt">Contract (sanitized)
+├─ code (string)
+├─ creditor (string)
+├─ creditor_steamid (string)
+├─ debtor (string)
+├─ debtor_steamid (string)
+├─ creditor_job (string)
+├─ amount (number)                    -- principal
+├─ interest (number)                  -- percent
+├─ fine (number)                      -- percent
+├─ installments (number)
+├─ installments_paid (number)
+├─ installments_advanced (number)
+├─ total_with_interest (number)
+├─ total_paid (number)
+├─ remaining_balance (number)
+├─ status (string)                    -- &quot;active&quot;, &quot;paused&quot;, &quot;paid&quot;, &quot;capped&quot;, &quot;unknown&quot;, etc.
+└─ created_at (any)                   -- forwarded from storage layer (if available)
+</code></pre>
+<p>Notes:
+- Numeric fields are normalized (e.g., <code>tonumber(...) or 0/1</code>) so external code can treat them safely as numbers.
+- <code>status</code> is always returned as a string (defaults to <code>"unknown"</code> if missing).</p>
+<hr />
+<h2 id="function-reference">Function Reference</h2>
+<h3 id="lsharkapigetallcontractscode"><code>LSHARK.API.GetAllContractsCode()</code></h3>
+<p>Returns a list of <strong>all contract codes</strong> in the database. Intended for admin/audit addons.</p>
+<p><strong>Signature</strong></p>
+<pre><code class="language-lua">local codes = LSHARK.API.GetAllContractsCode()
+</code></pre>
+<p><strong>Returns</strong>
+- <code>codes</code> (<code>table&lt;string&gt;</code>): zero or more contract codes.</p>
+<p><strong>Notes</strong>
+- This is an administrative-scope call. Avoid frequent execution on busy servers.</p>
+<hr />
+<h3 id="lsharkapigetallcontractdata"><code>LSHARK.API.GetAllContractData()</code></h3>
+<p>Returns sanitized data for <strong>all contracts</strong>. This is a <strong>heavy operation</strong> and should be used only for admin panels or infrequent reporting.</p>
+<p><strong>Signature</strong></p>
+<pre><code class="language-lua">local all = LSHARK.API.GetAllContractData()
+</code></pre>
+<p><strong>Returns</strong>
+- <code>all</code> (<code>table&lt;Contract&gt;</code>): array of sanitized contracts.</p>
+<p><strong>Notes</strong>
+- Do not run per-tick or per-player. Prefer targeted calls (<code>GetContractsCode</code>, <code>GetContractData</code>).</p>
+<hr />
+<h3 id="lsharkapigetcontractscodesteamid"><code>LSHARK.API.GetContractsCode(steamid)</code></h3>
+<p>Returns all contract codes related to a SteamID, including contracts where the player is <strong>debtor or creditor</strong>. Results are de-duplicated.</p>
+<p><strong>Signature</strong></p>
+<pre><code class="language-lua">local codes = LSHARK.API.GetContractsCode(&quot;STEAM_0:1:123456&quot;)
+</code></pre>
+<p><strong>Parameters</strong>
+- <code>steamid</code> (<code>string</code>): SteamID to query. Empty/invalid returns <code>{}</code>.</p>
+<p><strong>Returns</strong>
+- <code>codes</code> (<code>table&lt;string&gt;</code>): unique contract codes.</p>
+<p><strong>Behavior</strong>
+- Collects codes from:
+  - contracts where <code>steamid</code> is the <strong>debtor</strong>
+  - contracts where <code>steamid</code> is the <strong>creditor</strong>
+- Removes duplicates (same contract can match both sides in edge cases).</p>
+<hr />
+<h3 id="lsharkapigetcontractdatacode"><code>LSHARK.API.GetContractData(code)</code></h3>
+<p>Returns sanitized contract data for a single contract code (or <code>nil</code> if not found).</p>
+<p><strong>Signature</strong></p>
+<pre><code class="language-lua">local c = LSHARK.API.GetContractData(&quot;ABC-12345&quot;)
+</code></pre>
+<p><strong>Parameters</strong>
+- <code>code</code> (<code>string</code>): contract code. Empty/invalid returns <code>nil</code>.</p>
+<p><strong>Returns</strong>
+- <code>Contract|nil</code>: sanitized contract table, or <code>nil</code> if it doesn’t exist.</p>
+<hr />
+<h3 id="lsharkapigetbalancesteamid"><code>LSHARK.API.GetBalance(steamid)</code></h3>
+<p>Returns the <strong>internal LSHARK balance</strong> of a player.<br />
+This is the balance used by LSHARK for lending operations and <strong>is not</strong> the DarkRP wallet balance.</p>
+<p><strong>Signature</strong></p>
+<pre><code class="language-lua">local balance = LSHARK.API.GetBalance(&quot;STEAM_0:1:123456&quot;)
+</code></pre>
+<p><strong>Parameters</strong>
+- <code>steamid</code> (<code>string</code>): Player SteamID. Empty or invalid values return <code>0</code>.</p>
+<p><strong>Returns</strong>
+- <code>number</code>: Current LSHARK internal balance (always ≥ 0).</p>
+<p><strong>Notes</strong>
+- This value represents the lender’s internal funds stored by LSHARK.
+- It is used when issuing contracts and when receiving installment payments.
+- External addons must use this function instead of accessing database helpers directly.</p>
+<hr />
+<h3 id="lsharkapihasactivedebtsteamid"><code>LSHARK.API.HasActiveDebt(steamid)</code></h3>
+<p>Returns <code>true</code> if the SteamID has <strong>any debt</strong> as debtor, defined by:
+- <code>remaining_balance &gt; 0</code>, and
+- <code>status ~= "paid"</code></p>
+<p><strong>Signature</strong></p>
+<pre><code class="language-lua">local hasDebt = LSHARK.API.HasActiveDebt(&quot;STEAM_0:1:123456&quot;)
+</code></pre>
+<p><strong>Parameters</strong>
+- <code>steamid</code> (<code>string</code>): debtor SteamID. Empty/invalid returns <code>false</code>.</p>
+<p><strong>Returns</strong>
+- <code>boolean</code>: whether any non-paid contract still has remaining balance.</p>
+<p><strong>Notes</strong>
+- This is the recommended helper for restrictions (job changes, purchases, rentals) when you only need a yes/no answer.</p>
+<hr />
+<h2 id="usage-examples-server-side">Usage Examples (Server-Side)</h2>
+<h3 id="example-1-block-an-action-if-player-has-debt">Example 1 — Block an action if player has debt</h3>
+<pre><code class="language-lua">hook.Add(&quot;PlayerCanBuyPistol&quot;, &quot;LSHARK_BlockIfDebt&quot;, function(ply)
+    if not IsValid(ply) then return end
+    if LSHARK.API.HasActiveDebt(ply:SteamID()) then return false, &quot;You cannot buy this while in debt.&quot; end
+end)
+</code></pre>
+<h3 id="example-2-fetch-all-contracts-for-a-player-and-print-remaining-balance">Example 2 — Fetch all contracts for a player and print remaining balance</h3>
+<pre><code class="language-lua">local function DebugPrintPlayerContracts(ply)
+    if not IsValid(ply) then return end
+    local codes = LSHARK.API.GetContractsCode(ply:SteamID())
+    for _, code in ipairs(codes) do
+        local c = LSHARK.API.GetContractData(code)
+        if c then print(&quot;[LSHARK API]&quot;, c.code, c.status, c.remaining_balance) end
+    end
+end
+</code></pre>
+<h3 id="example-3-admin-scan-heavy-list-all-contract-codes">Example 3 — Admin scan (heavy): list all contract codes</h3>
+<pre><code class="language-lua">concommand.Add(&quot;lshark_admin_list_codes&quot;, function(ply)
+    if IsValid(ply) and not ply:IsAdmin() then return end
+    local codes = LSHARK.API.GetAllContractsCode()
+    print(&quot;[LSHARK API] Total contracts:&quot;, #codes)
+end)
+</code></pre>
+<hr />
+<h2 id="best-practices-for-integrators">Best Practices for Integrators</h2>
+<ul>
+<li>Prefer <strong>targeted queries</strong>: <code>GetContractsCode(steamid)</code> + <code>GetContractData(code)</code>.</li>
+<li>Use <code>GetAllContractData()</code> only for <strong>admin-only</strong> panels or periodic exports.</li>
+<li>For restrictions, prefer <code>HasActiveDebt()</code> over manual status checks, because it encodes the rule “remaining &gt; 0 and not paid”.</li>
+<li>Avoid caching contract tables for long periods; prefer refreshing on LSHARK hooks (e.g., <code>LSHARK_ContractCreated</code>, <code>LSHARK_ContractPaidOff</code>, <code>LSHARK_ContractStatusChanged</code>).</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "search.suggest", "search.highlight", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
