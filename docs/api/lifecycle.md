@@ -142,6 +142,20 @@ It is fully server-authoritative and runs periodically for **online debtors**.
 
 ---
 
+Before each collection cycle, LSHARK gathers every contract where the online player is the debtor and the contract is eligible for enforcement (`active` or `capped`). For each contract, the server first normalizes the financial state (remaining balance, total paid, installment counters) and applies protective rules that keep the system stable over time.
+
+The first protection is the **debt ceiling** (multiplier cap). If the contract’s remaining balance has grown beyond the maximum allowed for the creditor job, LSHARK clamps the remaining balance to that ceiling, switches the contract into `capped`, and disables late fees (`fine = 0`). From that point forward, the contract can still be paid down, but it can no longer grow due to penalties.
+
+Once the contract is inside allowed bounds, the server determines what the debtor is allowed to pay automatically in this tick by computing the **auto-debit cap** from the debtor’s current DarkRP wallet balance and their configured percentage limit. This cap is a hard limit for the tick: LSHARK will not auto-debit more than that amount, even if the contract is behind.
+
+With the cap established, LSHARK computes the **current installment target** based on the remaining balance divided by the number of installments still open. Then it processes one of the three payment outcomes. If the debtor has enough available cap to cover the target installment, the server debits the debtor’s DarkRP wallet and credits the same value into the creditor’s internal LSHARK balance, advances the installment counter, reduces the remaining balance, and if the remaining reaches zero it marks the contract as `paid`. If the debtor can pay something but not the full target installment, the server still debits what it can (up to the cap), credits the creditor’s LSHARK balance, reduces the remaining balance, and then evaluates penalty rules.
+
+Late fees are applied only when the contract is not capped and the fine percentage is greater than zero. They occur when the debtor cannot meet the expected payment for the tick (for example: no available cap, no wallet money, or only a partial payment). In those cases, LSHARK increases the remaining balance by a fine computed from the remaining amount under the configured fine rate, persists the updated remaining balance, and emits the corresponding hooks/logs/analytics. If the contract is `capped`, the same failure or partial-payment scenarios do not apply any fine; the system only records the event and continues.
+
+All money movement is strictly server-side and always follows the same direction: payments are taken from the debtor’s DarkRP wallet and deposited into the creditor’s LSHARK internal balance. No client-side calculation or UI action can force these transitions; the client only observes the results through updates, notifications, and events.
+
+---
+
 ### 1) Timer & Scheduling
 
 The engine runs on a repeating timer:
