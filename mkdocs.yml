@@ -1,10 +1,29 @@
 site_name: LSHARK API Documentation
 site_description: Public API and hooks for LSHARK (Garry's Mod / DarkRP)
-site_url: https://github.com/dahaka637/lshark-docs
+site_url: https://dahaka637.github.io/lshark-docs/
 
 theme:
   name: material
   language: en
+
+  logo: assets/lshark-logo.png
+  favicon: assets/lshark-logo.png
+
+  palette:
+    - scheme: slate
+      primary: blue
+      accent: cyan
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+
+    - scheme: default
+      primary: blue
+      accent: cyan
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+
   features:
     - navigation.tabs
     - navigation.sections
@@ -13,10 +32,12 @@ theme:
     - search.highlight
     - content.code.copy
 
+
 nav:
   - Home: index.md
   - API:
+      - Overview: api/overview.md
       - Functions: api/functions.md
       - Hooks: api/hooks.md
-  - Contract Model: contract-model.md
-  - Lifecycle: lifecycle.md
+      - Contract Model: api/contract-model.md
+      - Lifecycle: api/lifecycle.md
